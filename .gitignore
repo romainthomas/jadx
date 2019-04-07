@@ -30,3 +30,4 @@ jadx-output/
 *.log
 *.cfg
 *.orig
+sourcetrail_dependencies/
