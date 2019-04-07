@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import jadx.api.JadxArgs;
+import jadx.core.dex.visitors.DecodeStrings;
 import jadx.core.dex.visitors.ClassModifier;
 import jadx.core.dex.visitors.ConstInlineVisitor;
 import jadx.core.dex.visitors.ConstructorVisitor;
@@ -117,6 +118,11 @@ public class Jadx {
 
 			passes.add(new DependencyCollector());
 			passes.add(new RenameVisitor());
+
+
+      // Deobfuscation passes
+      // ====================
+      passes.add(new DecodeStrings());
 		}
 		return passes;
 	}
