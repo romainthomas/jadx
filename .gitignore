@@ -31,3 +31,4 @@ jadx-output/
 *.cfg
 *.orig
 sourcetrail_dependencies/
+fontconfig
