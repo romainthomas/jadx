@@ -99,9 +99,9 @@ dependencyUpdates.resolutionStrategy = {
 	}
 }
 
-task copyArtifacts(type: Sync, dependsOn: ['jadx-cli:installDist', 'jadx-gui:installDist']) {
+task copyArtifacts(type: Sync, dependsOn: ['jadx-cli:installDist', 'jadx-gui:installDist', 'jadx-deobf:installDist']) {
 	destinationDir file("$buildDir/jadx")
-	['jadx-cli', 'jadx-gui'].each {
+	['jadx-cli', 'jadx-gui', 'jadx-deobf'].each {
 		from tasks.getByPath(":${it}:installDist").destinationDir
 	}
 }
